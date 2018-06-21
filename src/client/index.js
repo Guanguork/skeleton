@@ -34,5 +34,5 @@ function customReloadLogic(name, module, isReload) {
 } */
 import foo from './scripts/foo'
 
-let hola = 'adios'
-console.log(`estoy hasta ${foo.cosa}`, hola)
+let hola = 'D'
+console.log(`estoy hasta ${foo.cosa}`, hola) 

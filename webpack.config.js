@@ -4,6 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env, argv) => {
   console.log(argv.mode);
@@ -25,16 +26,28 @@ module.exports = (env, argv) => {
       ]
     },
     devServer: {
+      overlay: {
+        warnings: true,
+        errors: true
+      },
+      headers: {
+        'X-Custom-Foo': 'bar'
+      },
       port: 3000,
-      proxy: {
-        '/api': 'http://localhost:8080'
-      }
+      proxy: [{
+        context: ['/api', '/user'],
+        target: 'http://localhost:8080'
+      }]
     },
     plugins: [
       new CleanWebpackPlugin(['dist']),
-      new HtmlWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+        title: 'ye'
+      }),
       new webpack.NamedModulesPlugin(),
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
+      //new BundleAnalyzerPlugin()
     ]
   };
 };

@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "go": "webpack-dev-server --mode development --config webpack.config.js",
-    "dev": "webpack --mode development --config webpack.config.js",
-    "build": "webpack --mode production --config webpack.config.js"
+    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "server": "nodemon src/server/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -15,12 +16,18 @@
     "clean-webpack-plugin": "^0.1.19",
     "concurrently": "^3.6.0",
     "html-webpack-plugin": "^3.2.0",
-    "morgan": "^1.9.0",
     "webpack": "^4.11.1",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.0.3",
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.6",
+    "morgan": "^1.9.0",
+    "vue": "^2.5.16"
   }
 }
