@@ -6,12 +6,12 @@ const conf = {
 }
 
 const saludo = {
-  msg: 'HI', 
+  msg: 'Hi', 
   numero: 1
 }
 
 const despedida = {
-  msg: 'BYE', 
+  msg: 'Bye', 
   numero: 0
 }
 
