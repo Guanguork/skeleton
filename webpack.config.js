@@ -4,7 +4,9 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { VueLoaderPlugin } = require('vue-loader');
+
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env, argv) => {
   console.log(argv.mode);
@@ -40,11 +42,12 @@ module.exports = (env, argv) => {
       }]
     },
     plugins: [
-      new CleanWebpackPlugin(['dist']),
-      new HtmlWebpackPlugin({
+    //   new CleanWebpackPlugin(['dist']),
+      /* new HtmlWebpackPlugin({
         template: './src/index.html',
         title: 'ye'
-      }),
+      }), */
+      new VueLoaderPlugin(),
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       //new BundleAnalyzerPlugin()
