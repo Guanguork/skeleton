@@ -2,7 +2,14 @@
   "name": "skeleton",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "echo hola"
+  },
   "repository": "https://github.com/Guanguork/skeleton.git",
   "author": "oneworkmail@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": "10.7.0", 
+    "npm": "6.0.0"
+  },
 }
