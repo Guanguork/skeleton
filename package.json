@@ -7,7 +7,8 @@
     "go": "webpack-dev-server --mode development --config webpack.config.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
