@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A sample Node.js app using Express 4",
   "engines": {
-    "node": "10.7.0", 
+    "node": "10.7.0",
     "npm": "6.0.0",
     "yarn": "1.0.1"
   },
@@ -16,5 +16,8 @@
     "url": "https://github.com/Guanguork/skeleton.git"
   },
   "author": "oneworkmail@gmail.com",
-  "license": "MIT"  
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
